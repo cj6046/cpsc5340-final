@@ -31,6 +31,9 @@ struct ContentView: View {
             }
             .navigationTitle("Master Memory")
             .navigationBarTitleDisplayMode(.inline)
+            .refreshable {
+                flashCardApp.fetchData()
+            }
         }
         .onAppear() {
             flashCardApp.fetchData()

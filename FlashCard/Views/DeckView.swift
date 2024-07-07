@@ -8,7 +8,6 @@ import SwiftUI
 struct DeckView: View {
     
     @State var deck : DeckModel
-    @State private var cardsToBeReviewed = 0
     @State private var currentIndex = 0
     @State private var showBack = false
     
@@ -19,8 +18,7 @@ struct DeckView: View {
                 .padding()
             
             Spacer()
-            cardsToBeReviewed = deck.cards.count
-            while cardsToBeReviewed > 0 {
+            if currentIndex >= 0 && currentIndex < deck.cards.count {
                 CardView(card: deck.cards[currentIndex], showBack: $showBack)
                     .frame(maxHeight: .infinity)
                     .aspectRatio(3/4, contentMode: .fill)

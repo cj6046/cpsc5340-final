@@ -2,8 +2,6 @@
 //  FlashCardViewModel.swift
 //  FlashCard
 //
-//  Created by Amberley Harris on 7/6/24.
-//
 
 import Foundation
 import FirebaseCore
@@ -15,6 +13,8 @@ class FlashCardViewModel : ObservableObject {
     let db = Firestore.firestore()
     
     func fetchData() {
+        self.decks.removeAll()
+        
         db.collection("decks")
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {

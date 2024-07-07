@@ -2,8 +2,6 @@
 //  FlashCardApp.swift
 //  FlashCard
 //
-//  Created by Amberley Harris on 7/6/24.
-//
 
 import SwiftUI
 import FirebaseCore
